@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
+      - run: npx -y playwright@^1.48.2 install --with-deps
       - run: npm run build
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
